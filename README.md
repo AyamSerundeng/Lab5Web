@@ -780,21 +780,3 @@ function validasiForm() {
 4. Buka DevTools (F12 / Inspect) → tab **Console** untuk melihat output `console.log`.
 
 ---
-
-## Struktur File
-
-```
-Lab5Web/
-├── index.html
-├── script.js
-├── README.md
-└── screenshots/          ← letakkan semua screenshot di sini
-    ├── 00-tampilan-awal.png
-    ├── 01-output-halaman.png
-    ├── 01-output-console.png
-    ├── ...
-    └── 15-elemen-disembunyikan.png
-```
-
----
-````
