@@ -9,7 +9,22 @@ if (namaPengguna && namaPengguna.trim() !== "") {
     alert("Nama belum diisi.");
 }
 
+function operasiDasarPrompt() {
+  const val1 = prompt("Masukkan angka pertama:");
+  const val2 = prompt("Masukkan angka kedua:");
+  const num1 = Number(val1);
+  const num2 = Number(val2);
+  if (val1 === null || val2 === null || val1.trim() === "" || val2.trim() === "" || Number.isNaN(num1) || Number.isNaN(num2)) {
+    console.log("Input tidak valid!");
+    return;
+  }
+  operasiDasar(num1, num2);
+}
+operasiDasarPrompt()
+
 function operasiDasar(a, b) {
+    console.log("Bilangan a: ", a)
+    console.log("Bilangan b: ", b)
     console.log("Penjumlahan:", a + b);
     console.log("Pengurangan:", a - b);
     console.log("Perkalian:", a * b);
@@ -112,4 +127,51 @@ function prosesHitungNilai() {
     document.getElementById("hasilNilaiAkhir").textContent = "Nilai Akhir: " + nilaiAkhir.toFixed(2);
     document.getElementById("hasilPredikat").textContent = "Predikat: " + predikat;
     document.getElementById("hasilStatus").textContent = "Status: " + status;
+}
+
+console.log("=== Tabel Perkalian 7 ===");
+for (let i = 1; i <= 10; i++) {
+    console.log(`7 x ${i} = ${7 * i}`);
+}
+
+function cekGenap(angka) {
+  return angka % 2 === 0;
+}
+console.log("Apakah 4 genap?", cekGenap(4));
+console.log("Apakah 7 genap?", cekGenap(7));
+
+function validasiFormKosong() {
+  const daftarInput = document.querySelectorAll(".input-wajib");
+  const pesanError = document.getElementById("pesanValidasi");
+  
+  let adaYangKosong = false;
+
+  pesanError.textContent = "";
+  daftarInput.forEach((input) => {
+    input.style.borderColor = "";
+  });
+
+  daftarInput.forEach((input) => {
+    if (input.value.trim() === "") {
+      adaYangKosong = true;
+      input.style.borderColor = "red"; // Beri border merah pada kolom yang kosong
+    }
+  });
+
+  if (adaYangKosong) {
+    pesanError.style.color = "red";
+    pesanError.textContent = "Semua kolom wajib diisi, tidak boleh ada yang kosong!";
+  } else {
+    pesanError.style.color = "green";
+    pesanError.textContent = "Form berhasil dikirim! Semua kolom sudah terisi.";
+  }
+}
+
+function toggleElemen() {
+  const elem = document.getElementById("teksSembunyi");
+  if (elem.style.display === "none") {
+    elem.style.display = "block";
+  } else {
+    elem.style.display = "none";
+  }
 }

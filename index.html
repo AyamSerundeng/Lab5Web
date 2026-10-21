@@ -20,6 +20,9 @@
         <label><input type="checkbox" class="menu" value="5000"> Ayam Goreng — Rp5.000</label><br>
         <label><input type="checkbox" class="menu" value="500"> Tempe — Rp500</label><br>
         <label><input type="checkbox" class="menu" value="2500"> Telur Dadar — Rp2.500</label><br>
+        <label><input type="checkbox" class="menu" value="5000"> Es Teh Manis Rp3.000</label><br>
+        <label><input type="checkbox" class="menu" value="15000"> Nasi Goreng Rp15.000</label><br>
+        <label><input type="checkbox" class="menu" value="15000"> Rica Bebek Rp15.000</label><br>
         <p>Total: Rp<span id="total">0</span></p>
         <script src="script.js"></script>
         <h2>Kalkulator Nilai Mahasiswa</h2>
@@ -36,5 +39,27 @@
         <p id="hasilNilaiAkhir">Nilai Akhir: -</p>
         <p id="hasilPredikat">Predikat: -</p>
         <p id="hasilStatus">Status: -</p>
+        <div style="border: 1px solid #ccc; padding: 15px; margin-top: 20px;">
+            <h3>Form Input Data (Wajib Diisi)</h3>
+            <form id="formValidasi">
+                <div>
+                    <label for="namaLengkap">Nama Lengkap:</label><br>
+                    <input type="text" id="namaLengkap" class="input-wajib"><br><br>
+                </div>
+                <div>
+                    <label for="emailUser">Email:</label><br>
+                    <input type="email" id="emailUser" class="input-wajib"><br><br>
+                </div>
+                <div>
+                    <label for="alamatUser">Alamat:</label><br>
+                    <input type="text" id="alamatUser" class="input-wajib"><br><br>
+                </div>
+                <button type="button" onclick="validasiFormKosong()">Kirim Data</button>
+            </form>
+            <p id="pesanValidasi" style="color: red; font-weight: bold;"></p>
+        </div>
+        <br><br>
+        <p id="teksSembunyi">Teks ini bisa disembunyikan dan ditampilkan kembali.</p>
+        <button type="button" onclick="toggleElemen()">Sembunyikan / Tampilkan Pesan</button>
     </body>
 </html>     
